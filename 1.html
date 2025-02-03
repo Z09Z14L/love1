@@ -1,0 +1,17 @@
+<!DOCTYPE html> <html lang="zh-CN"> <head> <meta charset="UTF-8"> <title>赵志龙专用</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: sans-serif; background: #fff; } .page { width: 100vw; height: 100vh; display: none; /* 默认都隐藏 */ flex-direction: column; align-items: center; justify-content: center; } .page1 { display: flex; /* 初始显示第1页 */ } button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 4px; background-color: #FF6699; color: #fff; } button:hover { background-color: #FF3366; }
+/* 第二屏上要播放的字体动画 */  
+.animated-text {  
+  color: red;  
+  animation: growText 3s forwards; /* 动画名称growText，3秒完成，forwards表示结束后保持最终状态 */  
+}  
+@keyframes growText {  
+  0% {  
+    font-size: 10px;  
+    opacity: 0.3;  
+  }  
+  100% {  
+    font-size: 48px;  
+    opacity: 1;  
+  }  
+}  
+</style> </head> <body> <!-- 第1页：只有一个按钮 --> <div class="page page1"> <button onclick="showNextPage()">赵志龙专用</button> </div> <!-- 第2页：只显示纯红色文字，由小变大 --> <div class="page page2"> <div class="animated-text">朱麦景我爱你</div> </div> <script> function showNextPage() { document.querySelector('.page1').style.display = 'none'; document.querySelector('.page2').style.display = 'flex'; } </script> </body> </html>
